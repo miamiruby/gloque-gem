@@ -1,6 +1,16 @@
 = gloque-gem
 
-Description goes here.
+Queue for processing csv data
+
+== Queue for DMV
+
+* For the program you create you should have 3 processes.
+
+* One reads the input from data.csv and puts the people in queue
+* One that removes people from the queue and processes them ( this should only simulate one agent )
+* One that moved them to the priority queue
+
+* The output should also be in CSV and should contain the caller's ID, the time waiting to be served and the cost of the call.
 
 == Contributing to gloque-gem
  
@@ -17,3 +27,8 @@ Description goes here.
 Copyright (c) 2016 Paul Kruger. See LICENSE.txt for
 further details.
 
+--------------------------
+
+Describe how you would build a system that would allow 3 other systems to manipulate a one queue in the most efficient way possible. One System adds to the end of the queue based on user input, one system processes and removes from the front of the queue and the last system removes items that have been in the queue for greater then 60 seconds and moves them into a separate priority queue.
+
+So imagine if you will you walk into the DMV and you take a ticket securing your space in the line. After a period of time if you were not serviced your number would be moved to another line that had additional higher cost agents available. The agents in the first queue has a relative cost of 1 and agents in the second queue have a relative cost of 2. The goals are to describe the most efficient from a time and cost perspective way to implement this. For the purpose of this exercise we will not deal with the mechanics of the second (Priority) queue, just that once they enter that queue their cost increases.
